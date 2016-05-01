@@ -1,6 +1,5 @@
 from bs4 import BeautifulSoup
 import csv
-import glob
 import os.path
 
 inpath = 'input/'   
@@ -10,7 +9,6 @@ for filename in os.listdir(inpath):
     ifile = inpath+filename
     soup = BeautifulSoup(open(inpath+filename),"lxml")
     rows = soup.find_all("div",class_='row')
-    n = len(rows)
     result = [[]]
     result [0] = ['message', 'sender', 'time']
     
